@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>How are you taking over the world today?</title>
+</head>
+<body class="bg-black w-full h-screen flex items-center">
+    <main class="p-10 text-4xl bg-black text-white">
+        <div class="text-zinc-500 my-3">
+            How are you taking over the world today?
+        </div>
+        <div>
+            <span class="text-zinc-700">»</span> by
+            <span id="verb" class="text-sky-500 font-bold"></span>
+            <span id="target" class="text-blue-500 font-bold"></span>
+            while <span id="while" class="text-indigo-500 font-bold"></span>
+        </div>
+    </main>
+    <script>
+        const VERBS = [
+            "eating",
+            "spray painting",
+            "robbing",
+            "drawing on",
+            "stealing",
+            "building",
+            "running away from",
+            "rickrolling",
+        ];
+        const TARGETS = [
+            "a bank",
+            "an elephant",
+            "the White House",
+            "the IRS",
+            "a house",
+            "an apartment building",
+            "a furniture store",
+            "a restaurant",
+            "a chair",
+            "a door",
+            "Fort Knox",
+            "a Walmart"
+        ];
+        const WHILE = [
+            "drawing Craig",
+            "drawing Greg",
+            "laughing",
+            "singing",
+            "dancing",
+        ];
+
+        function randomChoice(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function setText() {
+            const elmtVerb = document.getElementById("verb");
+            const elmtTarget = document.getElementById("target");
+            const elmtWhile = document.getElementById("while");
+
+            elmtVerb.innerText = randomChoice(VERBS);
+            elmtTarget.innerText = randomChoice(TARGETS);
+            elmtWhile.innerText = randomChoice(WHILE);
+        }
+
+        setText();
+    </script>
+</body>
+</html>
